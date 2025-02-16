@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Contest Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Coding Contest Tracker</h1>
+    </header>
+
+    <main>
+        <section id="upcoming-contests">
+            <h2>Upcoming Contests</h2>
+            <div class="card">
+                {% if contests %}
+                    <ul>
+                        {% for contest in contests %}
+                            <li>{{ contest.name }} - {{ contest.date }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No upcoming contests found.</p>
+                {% endif %}
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Coding Contest Tracker</p>
+    </footer>
+
+</body>
+</html>
